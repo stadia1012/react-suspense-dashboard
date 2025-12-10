@@ -31,14 +31,13 @@ app
 │      │     route.ts
 │      └─total
 │            route.ts
-├─dashboard
-│  │  page.tsx              # 대시보드 메인 페이지
-│  ├─components
-│  │      dashboard-ui.tsx  # 재사용 가능한 카드 컴포넌트
-│  │      metric-cards.tsx  # 메트릭별 카드 구현
-│  └─lib
-│         api.ts           # API fetch 함수 & 타입 정의
-└─skeleton
+└─dashboard
+   │  page.tsx              # 대시보드 메인 페이지
+   ├─components
+   │      dashboard-ui.tsx  # 재사용 가능한 카드 컴포넌트
+   │      metric-cards.tsx  # 메트릭별 카드 구현
+   └─lib
+          api.ts           # API fetch 함수 & 타입 정의
 ```
 
 ## 재사용 가능한 카드 컴포넌트
