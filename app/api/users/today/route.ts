@@ -7,6 +7,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       success: true,
       value: 128,
+      change: 12.5, // 전일 대비 증감률 (%)
     }, { status: 200 });
 
   } catch (error) {

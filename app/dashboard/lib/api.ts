@@ -14,11 +14,18 @@ export const API_ENDPOINTS = {
 interface ApiResponse {
   success: boolean;
   value: number;
+  change?: number; // 증감률 (%) - optional
   error?: string;
 }
 
+// 메트릭 데이터 타입
+export interface MetricData {
+  value: number;
+  change?: number; // optional
+}
+
 // 공통 fetch 유틸리티
-async function fetchMetric(endpoint: string): Promise<number> {
+async function fetchMetric(endpoint: string): Promise<MetricData> {
   const res = await fetch(endpoint, { cache: 'no-store' });
 
   if (!res.ok) {
@@ -26,7 +33,10 @@ async function fetchMetric(endpoint: string): Promise<number> {
   }
 
   const data: ApiResponse = await res.json();
-  return data.value;
+  return {
+    value: data.value,
+    change: data.change,
+  };
 }
 
 // 각 메트릭 fetch 함수
@@ -34,4 +44,3 @@ export const fetchTodayUsers = () => fetchMetric(API_ENDPOINTS.users.today);
 export const fetchTotalUsers = () => fetchMetric(API_ENDPOINTS.users.total);
 export const fetchDailySales = () => fetchMetric(API_ENDPOINTS.sales.daily);
 export const fetchWeeklySales = () => fetchMetric(API_ENDPOINTS.sales.weekly);
-

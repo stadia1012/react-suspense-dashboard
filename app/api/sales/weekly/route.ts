@@ -7,6 +7,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       success: true,
       value: 18750000,
+      change: 15.7, // 전주 대비 증감률 (%)
     }, { status: 200 });
 
   } catch (error) {
@@ -16,4 +17,3 @@ export async function GET(request: NextRequest) {
       { status: 500 });
   }
 }
-

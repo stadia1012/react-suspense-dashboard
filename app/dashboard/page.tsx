@@ -17,13 +17,13 @@ export default function DashboardPage() {
 
   return (
     <main className="p-8 bg-gray-50 min-h-screen">
-      <div className="flex items-center gap-3 mb-8">
+      <div className="flex items-center gap-2 mb-4">
         <h1 className="text-3xl font-bold text-gray-800">대시보드</h1>
         <button
           type="button"
           onClick={handleRefreshAll}
-          className="w-8 h-8 p-1.5 rounded-lg bg-white border border-gray-200 
-            hover:bg-gray-50 hover:border-gray-300 shadow-sm
+          className="w-8 h-8 p-1.5 rounded-[8px] 
+            hover:bg-slate-200/75
             transition-all duration-200 cursor-pointer
             flex items-center justify-center
           "
